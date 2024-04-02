@@ -1,3 +1,39 @@
-#container {
-    background-color: rgb(219, 181, 181);
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  padding: 15px;
+  background-color: #333;
+  color: white;
+}
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-icon {
+    font-weight: bold;
+    margin-right: 1rem;
 }
