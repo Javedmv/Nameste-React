@@ -1,4 +1,33 @@
 .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.nav-bar > ul {
+    list-style-type: none;
+    display: flex;
+}
+.nav-bar > ul > li{
+    padding: 10px;
+}
+.logo{
+    width: 100px;
+}
+.card {
+    width: 200;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+.card > img {
+    width: 100%;
+}
+.restuarentList{
+    display: flex;
+}
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;  
@@ -36,4 +65,4 @@
 .user-icon {
     font-weight: bold;
     margin-right: 1rem;
-}
+} */
