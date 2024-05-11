@@ -1,4 +1,10 @@
+import { useState } from "react";
 import {IMG_CDN_URL} from "../Constants"
+
+const loggedInUser = () =>{
+  // API CALL TO CHECK IF USER IS LOGEDIN
+  return true;
+}
 
 const Title = () => {
     return (
@@ -8,8 +14,11 @@ const Title = () => {
     )
   }
   
-  const Header = () => (
-    <div className="header">
+  const Header = () => {
+    const [isLoggedIn,setIsLoggedIn] = useState(true);
+
+    return (
+      <div className="header">
         <Title/>
         <div className="nav-bar">
           <ul>
@@ -18,6 +27,11 @@ const Title = () => {
             <li>Contact</li>
           </ul>
         </div>
+        { 
+          isLoggedIn?( <button onClick={()=> setIsLoggedIn(false) }>Login</button> ) :
+          ( <button onClick={()=> setIsLoggedIn(true) }>Logout</button> )
+        }
     </div>
-  )
+    )
+  };
   export default Header;
