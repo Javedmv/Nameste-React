@@ -2,6 +2,7 @@ import { restList } from "../Constants";
 import { RestCart } from "./RestCard";
 import { useState, useEffect } from "react";
 import Shimmer from './Shimmer'
+import { Link } from "react-router-dom";
 
 function filterData(search, searchIn){
     return searchIn.filter((res) => res?.info?.name?.toLowerCase().includes(search.toLowerCase()));
@@ -28,7 +29,7 @@ const Body = () => {
     }
     if(!allRestuarant)return null;
 
-    if(filteredRestuarant?.length === 0)return <h1>Rest not found......</h1>
+    // if(filteredRestuarant?.length === 0)return <h1>Rest not found......</h1>
 
     return (allRestuarant?.length === 0)? <Shimmer/> : (
         <>
@@ -42,13 +43,14 @@ const Body = () => {
              }}
             >search</button>
          </div>
-         <div className="restuarentList">
+         <div className="restuarent-list">
           {
             // this is were we write the logic for serach first time res not found.
           }
          {filteredRestuarant.map((res) => {
-            return <RestCart {...res.info} key={res.info.id} />
-         }
+            return (
+           <Link to={'/restaurant/'+res.info.id} key={res.info.id}>  <RestCart {...res.info}  /></Link>
+         )}
          )}
          </div>
       </>

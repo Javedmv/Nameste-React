@@ -1,5 +1,7 @@
 import { useState } from "react";
 import {IMG_CDN_URL} from "../Constants"
+import {Link} from 'react-router-dom'
+
 
 const loggedInUser = () =>{
   // API CALL TO CHECK IF USER IS LOGEDIN
@@ -22,9 +24,9 @@ const Title = () => {
         <Title/>
         <div className="nav-bar">
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><Link to='/' >Home</Link></li>
+            <li><Link to='/about'>About</Link></li>
+            <li><Link to='/contact'>Contact</Link></li>
           </ul>
         </div>
         { 
