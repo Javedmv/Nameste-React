@@ -3,10 +3,8 @@ import { RestCart } from "./RestCard";
 import { useState, useEffect } from "react";
 import Shimmer from './Shimmer'
 import { Link } from "react-router-dom";
+import { filterData } from "../utils/helper";
 
-function filterData(search, searchIn){
-    return searchIn.filter((res) => res?.info?.name?.toLowerCase().includes(search.toLowerCase()));
-}
 
 const Body = () => {
     const [allRestuarant, setAllRestuarant] = useState([]);
@@ -16,6 +14,7 @@ const Body = () => {
     useEffect(() => {
       getRestaurants();
     },[]);
+    // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
 
     async function getRestaurants() {
       try {
